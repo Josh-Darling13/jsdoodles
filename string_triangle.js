@@ -1,6 +1,6 @@
 /*
-A simple program with an out of strings 
-in the shape of a trianlge to the console. 
+A simple program with an output of strings 
+in the shape of a trianlge.
 */
 
 
