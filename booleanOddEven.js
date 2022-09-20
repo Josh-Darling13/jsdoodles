@@ -8,6 +8,10 @@ all other numbers N, is the same as N - 2.
 This uses a recursive function to take
 a single paramenter, (a positive whole int)
 and return a boolean 
+
+The final part of this exersize was to 
+take and return odd/even true/false value
+of a negetive number.
 */
 
 let n = 1234567890;
@@ -20,6 +24,7 @@ const numberWorkable = (num) => {
 
 const testWhole = (num) => {
   let numIs = Number(num);
+
   if (numIs % 1 == 0){
     return numIs;
   } else {
@@ -28,11 +33,14 @@ const testWhole = (num) => {
 }
 
 const lessThanZero = (num) => {
+
   if (num >= 1){
     return num;
+  } else if (num === 0){
+    console.log("zero is not a whole number");
   } else {
-      console.log("please enter a whole number");
-   }
+      return Math.abs(num);
+  }
 } 
 
 const numberIs = (num) => {
