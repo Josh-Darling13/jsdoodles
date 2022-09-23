@@ -15,7 +15,7 @@
  * Uncomment to use.
  */
 
-let testWord = "BoBa Fet bounty hunter";
+let testWord = "Boba Fet Bounty hunter";
 
 const findBees = (testWord) =>{
   let foundBees = testWord.replace(/[^B]/g, '');
