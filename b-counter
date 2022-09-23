@@ -1,0 +1,52 @@
+// import "./styles.css";
+
+/**
+ * A simple function to find capital Bs in 
+ * string and return them.
+ * 
+ * The ansewers can be out put to a basic
+ * HTML document not inculded. OR the 
+ * console.
+ * 
+ * Since additional files are not inculded I 
+ * have commented out both the imported 
+ * CSS and the HTML output.
+ * 
+ * Uncomment to use.
+ */
+
+let testWord = "BoBa Fet bounty hunter";
+
+const findBees = (testWord) =>{
+  let foundBees = testWord.replace(/[^B]/g, '');
+  console.log(foundBees);
+  return foundBees
+};
+
+const totesBees = (testWord) =>{
+  const swarm = testWord.length;
+  console.log(swarm);
+  return swarm;
+} 
+
+const busyBees = findBees(testWord);
+const howManyBs = totesBees(busyBees);
+
+/*
+document.getElementById("app").innerHTML = `
+<h1>Hello B!</h1>
+<div>
+  test string:<br>
+  ${testWord}.
+  <hr>
+  Found Bs:
+  <br>
+  ${busyBees}.
+  <hr>
+  # of Bs:
+  <br>
+  ${howManyBs}.
+</div>
+`;
+
+*/
