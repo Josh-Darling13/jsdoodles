@@ -1,0 +1,19 @@
+/**
+ * simple display of the 
+ * map funtion to create
+ * an arrayt of exponential
+ * numbers but also to
+ * give a clear display of 
+ * how the built in function
+ * works over each part of an
+ * array
+ */
+
+const numbers = [1, 2, 3, 4]
+
+const exponetNum = numbers.map( function (number)
+{ 
+  return number * number;
+});
+
+console.log(exponetNum);
