@@ -13,6 +13,9 @@
  * CSS and the HTML output.
  * 
  * Uncomment to use.
+ * 
+ * the js file letter-counter is an 
+ * upgraded version of this
  */
 
 let testWord = "Boba Fet Bounty hunter";
@@ -48,5 +51,4 @@ document.getElementById("app").innerHTML = `
   ${howManyBs}.
 </div>
 `;
-
 */

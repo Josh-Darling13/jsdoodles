@@ -1,0 +1,70 @@
+import "./styles.css";
+
+/**
+ * A simple function to find any
+ * capita letters in a 
+ * string and return 
+ * how many there are.
+ * 
+ * The ansewers are out put to 
+ * either the console log or
+ * to a basic HTML document
+ *  (not inculded.)
+ */
+
+let testWord = "Boba Fet: Bondsman and Bounty Hunter, NOT INSURED";
+let searchLetter = "N"; // prompt("please insert a letter");
+let totalLtr = [];
+  
+const makeArray = (word) => {
+  //turn string into an array
+  return word.split("");
+}
+const totalLets = (totalLtr) =>{ 
+  //returns total # of letters
+  const numOfLrts = totalLtr.length;
+  if (numOfLrts === 0){
+    return (`you must search for an uppercase letter`); 
+  } else {
+    return numOfLrts
+  }
+}
+
+const findLetter = (testWord, searchLetter) =>{ 
+  // finds number of cap letters in a given string
+  const arrayedWord = makeArray(testWord);
+  for (let letr of arrayedWord){
+    if(letr === searchLetter){
+      // tests if letter is uppercase
+      // I could have used regex but this was easier.
+      if (letr === letr.toUpperCase()){
+        totalLtr.push(letr);
+      }    
+    }
+  }
+  return totalLets(totalLtr);
+}
+
+const howManyltrs = findLetter(testWord, searchLetter);
+
+console.log( `the letter you're looking for is ${searchLetter}` + 
+              ` and there are ${howManyltrs} of them}.`
+);
+
+/*
+document.getElementById("app").innerHTML = `
+<h1>Hello B!</h1>
+<div>
+  test string:<br>
+  ${testWord}.
+  <hr>
+  The capital letter you're looking for is:
+  <br>
+  ${searchLetter}.
+  <hr>
+  # of those letters:
+  <br>
+  ${howManyltrs}.
+</div>
+`;
+*/
