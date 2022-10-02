@@ -26,12 +26,7 @@
       let asNum = Number(arrayRange[item]);
       arrayTotes += asNum;
     }
-  
-    const arrayTotesNum = Number(arrayTotes);
-    if (isNaN(arrayTotesNum)) {
-    }
-  
-    return arrayTotes;
+      return arrayTotes;
   };
   
   console.log(pickedRange(1, 10));
