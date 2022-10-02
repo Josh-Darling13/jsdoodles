@@ -1,0 +1,17 @@
+/**
+ * A funtion that accpects 2 parameters
+ * start and end, it then returns an
+ * array containing all the numbers
+ * from start to end.
+ */
+
+const pickedRange = (start, end) => {
+  let arrayRange = [];
+
+  while (start <= end) {
+    arrayRange.push(start++);
+  }
+  return arrayRange;
+};
+
+console.log(pickedRange(8, 13));
