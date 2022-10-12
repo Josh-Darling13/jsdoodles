@@ -1,44 +1,72 @@
 /**
  * A funtion that accpects 2 parameters
- * start and end, it then returns an
+ * start and end --which should be whole
+ * numbers and returns an
  * array containing all the numbers
  * from start to end.
  *
+ * ****************************************
  * This new verserion of the this function
  * is the same as writing:
  *
  * console.log(sum(range(1,10)));
  *
  * Adding all the vaules in the array
- * 
- * The third argument in the array will take the 
- * value "skip" and find only number divisable by
- * that number and then at the sum of them. 
  *
+ * **************************************
+ *
+ * In this newer version
+ *
+ * the funtion takes a 3rd argument.
+ *
+ * The third argument is a
+ *  "skip" value to search numbers
+ * and find only number divisable by skip
+ * then all those vaules are summed.
+ *
+ * BUT Wait! There's MORE!
+ *
+ * If NO vaule is given as a skip valude then
+ * the program funcutions as it normally would
  */
 
-
-const basicRange = (start, end) =>{
-  let arrayRange = [0];
-  while (start <= end) {
-    arrayRange.push(start);
-    start++;
-  }
-  return arrayRange;
-};
-
-const pickedRange = (start, end, skip) => {
-  let basicArray = [0];
-  let arrayTotes = 0;
-
-  basicArray = basicRange(start,end);
-
-  for (let item of basicArray) {
-    let asNum = Number(basicArray[item]);
-    arrayTotes += asNum;
-  }
-
-  return arrayTotes;
-};
-
-console.log(pickedRange(1, 10));
+ const basicRange = (start, end) => {
+    let arrayRange = [0];
+    while (start <= end) {
+      arrayRange.push(start);
+      start++;
+    }
+    return arrayRange;
+  };
+  
+  const skipRange = (start, end, skip) => {
+    let arrayRange = [0];
+    while (start <= end) {
+      if (start % skip === 0) {
+        arrayRange.push(start);
+      }
+      start++;
+    }
+    return arrayRange;
+  };
+  
+  const pickedRange = (start, end, skip) => {
+    let basicArray = [0];
+    let arrayTotes = 0;
+    let asNum = 0;
+  
+    if (skip === undefined) {
+      basicArray = basicRange(start, end);
+    } else {
+      basicArray = skipRange(start, end, skip);
+    }
+  
+    for (let item in basicArray) {
+      asNum = Number(basicArray[item]);
+      arrayTotes += Number(asNum);
+    }
+    return arrayTotes;
+  };
+  
+  console.log(pickedRange(1, 10, 3));
+  
