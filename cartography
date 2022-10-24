@@ -7,7 +7,7 @@ functions in react.
 
 
 
-let someStuff = ["Jake", "Mellisa", "Karen", "Tilda", "Eugene"];
+let someStuff = ["Jake", "Melisa", "Karen", "Tilda", "Eugene"];
 
 someStuff.map(function (value) {
   console.log(`${value} are still looking at the map...`);
