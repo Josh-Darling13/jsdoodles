@@ -1,0 +1,14 @@
+/*
+This super unimpresive function I wrote to have a clear 
+feel for how map works since it's one of the more important 
+functions in react.
+*/
+
+
+
+
+let someStuff = ["Jake", "Mellisa", "Karen", "Tilda", "Eugene"];
+
+someStuff.map(function (value) {
+  console.log(`${value} are still looking at the map...`);
+});
