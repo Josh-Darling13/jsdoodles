@@ -9,7 +9,7 @@ num 789 & compNums[n]; 829 = 1618
 num 829 & compNums[n]; 789 = 1618
 */
 
-let numbers = [                                                                 // an array of random numbers
+const numbers = [                                                                 // an array of random numbers
     180, 378, 314, 390, 386, 760, 707, 183,
     526, 355, 120, 743, 709,  78, 476, 808,
     458, 599, 789, 115,  85, 343, 550, 829,
