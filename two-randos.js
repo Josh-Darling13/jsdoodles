@@ -1,5 +1,8 @@
-/* A program designed to find THE FIRST 2 numbers in an array that equal k
-it will them terminate, before finding the reverse of the equation.
+/* A program designed to find
+THE FIRST 2 numbers in an array
+when added are equal to k it
+then terminate, before finding
+the reverse of the equation.
 
 It returns this:
 num 789 & compNums[n]; 829 = 1618
