@@ -13,14 +13,13 @@ let matchFound = false;
 // OR as a second solution split and remove 
 // search functions.
 
-const pairTester = (strTest) => {
+const pairTesterStrFunc = (strTest) => {
     const orgArray = strTest.split('');
     orgArray.forEach(element => {
         console.log(element);
     });
-
-
 }
 
+// pairTesterWhlFunc(testStr);
+pairTesterStrFunc(testStr);
 
-pairTester(testStr);
