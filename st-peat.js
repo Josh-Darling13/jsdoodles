@@ -20,6 +20,22 @@ const pairTesterStrFunc = (strTest) => {
     });
 }
 
+// pairTesterWhlFunc(strTest){
+    const orgArray = strTest.split('');                                 // Make the string into an array.
+    const copyArray = orgArray;                                         // Copy the original array.
+    const arrayLenght = orgArray.length;                                // Finds the Length of the array.
+    let countOrgArray = 0;                                              // Counter variable set to 0 for the original array.
+    let countCopyArray = 0;                                             // Counter variable set to 0 for the original array.
+
+    while(){
+        while(){}       //if the elements are the same but the array keys are different return the letter
+                        // else if both counters are equal to the length of the array and return null
+    }                   
+
+
+
+// }
+
 // pairTesterWhlFunc(testStr);
-pairTesterStrFunc(testStr);
+pairTesterStrFunc(testStr);                                             // using split and slice methods
 
