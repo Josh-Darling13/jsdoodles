@@ -41,3 +41,6 @@ const pairTesterStrFunc = (strTest) => {
 // pairTesterWhlFunc(testStr);
 pairTesterStrFunc(testStr);                                             // using split and slice methods
 
+/*
+these should be run as seperate programs in dev tools to see which is faster. 
+*/ 
