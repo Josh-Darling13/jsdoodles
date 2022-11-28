@@ -20,7 +20,7 @@ const pairTesterStrFunc = (strTest) => {
     });
 }
 
-pairTesterWhlFunc(strTest){
+const pairTesterWhlFunc = (strTest) =>{
     const orgArray = strTest.split('');                                 // Make the string into an array.
     const copyArray = orgArray;                                         // Copy the original array.
     const arrayLenght = orgArray.length;                                // Finds the Length of the array.
