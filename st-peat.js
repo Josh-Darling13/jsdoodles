@@ -20,25 +20,35 @@ const pairTesterStrFunc = (strTest) => {
     });
 }
 
-// pairTesterWhlFunc(strTest){
-//     const orgArray = strTest.split('');                                 // Make the string into an array.
-//     const copyArray = orgArray;                                         // Copy the original array.
-//     const arrayLenght = orgArray.length;                                // Finds the Length of the array.
-//     let countOrgArray = 0;                                              // Counter variable set to 0 for the original array.
-//     let countCopyArray = 0;                                             // Counter variable set to 0 for the original array.
-//     let loopBreak = false;                                               // variable for breaking out of loops
+pairTesterWhlFunc(strTest){
+    const orgArray = strTest.split('');                                 // Make the string into an array.
+    const copyArray = orgArray;                                         // Copy the original array.
+    const arrayLenght = orgArray.length;                                // Finds the Length of the array.
+    let countOrgArray = 0;                                              // Counter variable set to 0 for the original array.
+    let countCopyArray = 0;                                             // Counter variable set to 0 for the original array.
+    let loopBreak = false;                                               // variable for breaking out of loops
 
-//     while(){
-//         while(){}       //if the elements are the same but the array keys are different return the letter set loopStop to true
-//                         // else if both counters are equal to the length of the array and return null
-//     }
+    while(countOrgArray < arrayLenght){
 
-//     if (loopBreak === true){
-//         break;
-//     }
-// }
+        while(countCopyArray < arrayLenght){
+            if (countOrgArray !== countCopyArray && orgArray[countOrgArray] === copyArray[countOrgArray]){
+                console.log(` orgArray[countOrgArray] ${orgArray[countOrgArray]} === copyArray[countOrgArray] ${copyArray[countOrgArray]}`)
+            }
+        }       //if the elements are the same but the array keys are different return the letter set loopStop to true
+                        // else if both counters are equal to the length of the array and return null
+    
+    
+        if (loopBreak === true){
+            break;
+        }
 
-// pairTesterWhlFunc(testStr);
+        countOrgArray++;
+    }
+
+
+}
+
+pairTesterWhlFunc(testStr);
 pairTesterStrFunc(testStr);                                             // using split and slice methods
 
 /*
