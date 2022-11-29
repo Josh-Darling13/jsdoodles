@@ -5,9 +5,11 @@ if there is no such character
 return null.
 */
 
-const testStr = "voodoo";
+// const testStr = "voodoo";
+const testStr = "flamdo";   
+// const testStr = "quick brown fox jumped over the lazy dog i";
 // "quick brown fox jumped over the lazy dog i";    // test string with repeating letters
-// const testStr = "flamdo";                                      // test string no repeating letters
+                                   // test string no repeating letters
 let matchFound = false;
 
 // This has to be done with while while loops 
@@ -27,49 +29,47 @@ const pairTesterWhlFunc = (strTest) =>{
     const arrayLenght = orgArray.length;                                // Finds the Length of the array.
     let countOrgArray = 0;                                              // Counter variable set to 0 for the original array.
     let countCopyArray = 0;                                             // Counter variable set to 0 for the original array.
-    let loopBreak = false;                                               // variable for breaking out of loops
+    let loopBreak = false;                                              // variable for breaking out of loops
 
-    while(countOrgArray < arrayLenght){
-                        //if the elements are the same but the array keys are different return the letter set loopStop to true
-                        // else if both counters are equal to the length of the array and return null
-        while(countCopyArray < arrayLenght){
-            console.log(`while loop for first letter ${countOrgArray}` +
-            ` while loop for second letter ${countCopyArray}`
-            )
-
-            if (countCopyArray > countOrgArray){
+    while(countOrgArray < arrayLenght){                                 // Outer while loop running through the array
+        while(countCopyArray < arrayLenght){                            // nested while loop running through the array
+            if (countCopyArray > countOrgArray){                        // if nested while is greater than outer loop...
+                                                                        // making sure the same place in the array is not being tested
                 if(orgArray[countOrgArray] === copyArray[countCopyArray]){
+                                                                        // checks if the values are the same, if they are:
+                                                                        // log the values and there location in the string:
                     console.log(`the first letter is ${orgArray[countOrgArray]}\n` +
                     `it's position in the word is ${countOrgArray + 1}\n` +
                     `the first letter is ${copyArray[countCopyArray]}\n` +
                     `it's position in the word is ${countCopyArray + 1}`
                     )
-                    loopBreak = true;
-                    break;
-                }
+                    break;                                              // breaks this loop
+                } 
             }
 
-
-            countCopyArray++;
+            countCopyArray++;                                           // increments variable for searching the nested loop
             if (countCopyArray === arrayLenght && countOrgArray === arrayLenght - 1){
-                console.log("made it here");
-                break;
+                                                                        // if the entire array has been searched without a match found
+                loopBreak = true;                                       // set to true to break the outer loop
             }
-            else if (countCopyArray === arrayLenght){
+            else if (countCopyArray === arrayLenght){                   // resets counter for
                 countCopyArray = 0;
                 countOrgArray++;
-            } else if (countOrgArray === arrayLenght) {
-                countOrgArray = 0;
-            }
+            } 
+            // else if (countOrgArray === arrayLenght) {
+            //     countOrgArray = 0;
+            // }
         }
 
         if (loopBreak === true){
-            break;
+            return null;
+        } else {
+            return orgArray[countOrgArray];
         }
     }
 }
 
-pairTesterWhlFunc(testStr);
+console.log(pairTesterWhlFunc(testStr));                                   //to see a null value this must be logged to console
 // pairTesterStrFunc(testStr);                                             // using split and slice methods
 
 /*
