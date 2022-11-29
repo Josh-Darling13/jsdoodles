@@ -1,5 +1,5 @@
 /*
-a fucntion that returns a first
+A function that returns a first
 repeating character in a string
 if there is no such character
 return null.
@@ -13,42 +13,44 @@ functions.
 2. Using while loops.
 */
 
-// const testStr = "voodoo";
 // const testStr = "flamdo";   
 const testStr = "quick brown fox jumped over the lazy dog i";
-// "quick brown fox jumped over the lazy dog i";    // test string with repeating letters
-                                   // test string no repeating letters
 
-
-// This has to be done with while while loops 
-// OR as a second solution split and remove 
-// search functions.
+/*
+SOLUTION #1
+*/
 
 const pairTesterStrFunc = (strTest) => {                                // this function finds repeat letters using Javascript's array methods
-    const spaceLess = strTest.replaceAll(' ', '');
+
+    const spaceLess = strTest.replaceAll(' ', '');                      // removes the white space from the function
     const orgArray = spaceLess.split('');                               // makes each char in str an array value
     const arrayLenght = orgArray.length;                                // Finds the Length of the array.
-    let copyArray = [...orgArray];                                      // an empty array --this will contain the remainder of the array
-    let charFinder = 0;                                                 // counts the times a char was NOT found.
-    for (const elem of orgArray){
-        let searchChar = copyArray.shift();
-        const foundChar = copyArray.indexOf(searchChar);
-        if(foundChar === -1){
-            charFinder++;
-        } else {
-            console.log(`the first repeating charter is ${searchChar}`);
-            break;
+    let copyArray = [...orgArray];                                      // Copt of the original array for comparison
+    let charFinder = 0;                                                 // counts the time the char was NOT found.
+
+    for (const elem of orgArray){                                       // creates a loop of the original array
+        let searchChar = copyArray.shift();                             // removes the first element of the array and makes it into a search value.
+        const foundChar = copyArray.indexOf(searchChar);                // searched for the element that is now missing from the copy array
+        if(foundChar === -1){                                           // without a match the value is -1 so do this:
+            charFinder++;                                               // increment charFinder, this is handy later...
+        } else {                                                        // likewise a match has been found so do this:
+            console.log(`The 1st repeating charter is ${searchChar}`);  // log the character and...
+            return searchChar;                                          // return it.
         }
     }
-    if (charFinder === arrayLenght){
-        return null;
+
+    if (charFinder === arrayLenght){                                    // if charFinder is equal the length of the array no matches were found so:
+        return null;                                                    // set the value of the function to null.
     }
 };
 
+pairTesterStrFunc(testStr);
 console.log(pairTesterStrFunc(testStr));
 
 
-
+/*
+SOLUTION #2
+*/
 
 const pairTesterWhlFunc = (strTest) =>{                                 // this function finds repeat letters using while loops
     const orgArray = strTest.split('');                                 // makes each char in strTest an array value
@@ -95,10 +97,3 @@ const pairTesterWhlFunc = (strTest) =>{                                 // this 
 
 // console.log(pairTesterWhlFunc(testStr));                                //to see a null value this must be logged to console
 // pairTesterStrFunc(testStr);                                             // using split and slice methods
-
-
-
-
-/*
-these should be run as seperate programs in dev tools to see which is faster. 
-*/ 
