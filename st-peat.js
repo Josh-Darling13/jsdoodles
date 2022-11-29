@@ -13,9 +13,9 @@ functions.
 2. Using while loops.
 */
 
-const testStr = "voodoo";
-const testStr = "flamdo";   
-// const testStr = "quick brown fox jumped over the lazy dog i";
+// const testStr = "voodoo";
+// const testStr = "flamdo";   
+const testStr = "quick brown fox jumped over the lazy dog i";
 // "quick brown fox jumped over the lazy dog i";    // test string with repeating letters
                                    // test string no repeating letters
 
@@ -24,14 +24,28 @@ const testStr = "flamdo";
 // OR as a second solution split and remove 
 // search functions.
 
-const pairTesterStrFunc = (strTest) => {                                
-    const orgArray = strTest.split('');                                 // makes each char in str an array value
-    orgArray.forEach(element => {
-        console.log(element);
-    });
-}
+const pairTesterStrFunc = (strTest) => {                                // this function finds repeat letters using Javascript's array methods
+    const spaceLess = strTest.replaceAll(' ', '');
+    const orgArray = spaceLess.split('');                               // makes each char in str an array value
+    const arrayLenght = orgArray.length;                                // Finds the Length of the array.
+    let copyArray = [...orgArray];                                      // an empty array --this will contain the remainder of the array
+    let charFinder = 0;                                                 // counts the times a char was NOT found.
+    for (const elem of orgArray){
+        let searchChar = copyArray.shift();
+        const foundChar = copyArray.indexOf(searchChar);
+        if(foundChar === -1){
+            charFinder++;
+        } else {
+            console.log(`the first repeating charter is ${searchChar}`);
+            break;
+        }
+    }
+    if (charFinder === arrayLenght){
+        return null;
+    }
+};
 
-pairTesterStrFunc(testStr);
+console.log(pairTesterStrFunc(testStr));
 
 
 
