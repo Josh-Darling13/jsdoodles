@@ -3,14 +3,22 @@ a fucntion that returns a first
 repeating character in a string
 if there is no such character
 return null.
+
+I have 2 solutions for this problem.
+
+1. What I think would be the typical 
+solution using Javascript's builtin 
+functions.
+
+2. Using while loops.
 */
 
-// const testStr = "voodoo";
+const testStr = "voodoo";
 const testStr = "flamdo";   
 // const testStr = "quick brown fox jumped over the lazy dog i";
 // "quick brown fox jumped over the lazy dog i";    // test string with repeating letters
                                    // test string no repeating letters
-let matchFound = false;
+
 
 // This has to be done with while while loops 
 // OR as a second solution split and remove 
@@ -22,6 +30,11 @@ const pairTesterStrFunc = (strTest) => {
         console.log(element);
     });
 }
+
+pairTesterStrFunc(testStr);
+
+
+
 
 const pairTesterWhlFunc = (strTest) =>{                                 // this function finds repeat letters using while loops
     const orgArray = strTest.split('');                                 // makes each char in strTest an array value
@@ -66,8 +79,11 @@ const pairTesterWhlFunc = (strTest) =>{                                 // this 
     }
 };
 
-console.log(pairTesterWhlFunc(testStr));                                //to see a null value this must be logged to console
+// console.log(pairTesterWhlFunc(testStr));                                //to see a null value this must be logged to console
 // pairTesterStrFunc(testStr);                                             // using split and slice methods
+
+
+
 
 /*
 these should be run as seperate programs in dev tools to see which is faster. 
