@@ -16,15 +16,15 @@ let matchFound = false;
 // OR as a second solution split and remove 
 // search functions.
 
-const pairTesterStrFunc = (strTest) => {
-    const orgArray = strTest.split('');
+const pairTesterStrFunc = (strTest) => {                                
+    const orgArray = strTest.split('');                                 // makes each char in str an array value
     orgArray.forEach(element => {
         console.log(element);
     });
 }
 
-const pairTesterWhlFunc = (strTest) =>{
-    const orgArray = strTest.split('');                                 // Make the string into an array.
+const pairTesterWhlFunc = (strTest) =>{                                 // this function finds repeat letters using while loops
+    const orgArray = strTest.split('');                                 // makes each char in strTest an array value
     const copyArray = orgArray;                                         // Copy the original array.
     const arrayLenght = orgArray.length;                                // Finds the Length of the array.
     let countOrgArray = 0;                                              // Counter variable set to 0 for the original array.
@@ -52,24 +52,21 @@ const pairTesterWhlFunc = (strTest) =>{
                                                                         // if the entire array has been searched without a match found
                 loopBreak = true;                                       // set to true to break the outer loop
             }
-            else if (countCopyArray === arrayLenght){                   // resets counter for
+            else if (countCopyArray === arrayLenght){                   // resets counter for nested loop
                 countCopyArray = 0;
-                countOrgArray++;
+                countOrgArray++;                                        // advances next array comparison position
             } 
-            // else if (countOrgArray === arrayLenght) {
-            //     countOrgArray = 0;
-            // }
         }
 
-        if (loopBreak === true){
-            return null;
-        } else {
-            return orgArray[countOrgArray];
+        if (loopBreak === true){                                        // if loop break is true:
+            return null;                                                // return a null value
+        } else {                                                        // or:
+            return orgArray[countOrgArray];                             // return the letter found (if logged)
         }
     }
-}
+};
 
-console.log(pairTesterWhlFunc(testStr));                                   //to see a null value this must be logged to console
+console.log(pairTesterWhlFunc(testStr));                                //to see a null value this must be logged to console
 // pairTesterStrFunc(testStr);                                             // using split and slice methods
 
 /*
