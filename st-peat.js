@@ -5,7 +5,8 @@ if there is no such character
 return null.
 */
 
-const testStr = "The quick brown fox jumped over the lazy dog";    // test string with repeating letters
+const testStr = "voodoo";
+// "quick brown fox jumped over the lazy dog i";    // test string with repeating letters
 // const testStr = "flamdo";                                      // test string no repeating letters
 let matchFound = false;
 
@@ -29,27 +30,47 @@ const pairTesterWhlFunc = (strTest) =>{
     let loopBreak = false;                                               // variable for breaking out of loops
 
     while(countOrgArray < arrayLenght){
-
-        while(countCopyArray < arrayLenght){
-            if (countOrgArray !== countCopyArray && orgArray[countOrgArray] === copyArray[countOrgArray]){
-                console.log(` orgArray[countOrgArray] ${orgArray[countOrgArray]} === copyArray[countOrgArray] ${copyArray[countOrgArray]}`)
-            }
-        }       //if the elements are the same but the array keys are different return the letter set loopStop to true
+                        //if the elements are the same but the array keys are different return the letter set loopStop to true
                         // else if both counters are equal to the length of the array and return null
-    
-    
+        while(countCopyArray < arrayLenght){
+            console.log(`while loop for first letter ${countOrgArray}` +
+            ` while loop for second letter ${countCopyArray}`
+            )
+
+            if (countCopyArray > countOrgArray){
+                if(orgArray[countOrgArray] === copyArray[countCopyArray]){
+                    console.log(`the first letter is ${orgArray[countOrgArray]}\n` +
+                    `it's position in the word is ${countOrgArray + 1}\n` +
+                    `the first letter is ${copyArray[countCopyArray]}\n` +
+                    `it's position in the word is ${countCopyArray + 1}`
+                    )
+                    loopBreak = true;
+                    break;
+                }
+            }
+
+
+            countCopyArray++;
+            if (countCopyArray === arrayLenght && countOrgArray === arrayLenght - 1){
+                console.log("made it here");
+                break;
+            }
+            else if (countCopyArray === arrayLenght){
+                countCopyArray = 0;
+                countOrgArray++;
+            } else if (countOrgArray === arrayLenght) {
+                countOrgArray = 0;
+            }
+        }
+
         if (loopBreak === true){
             break;
         }
-
-        countOrgArray++;
     }
-
-
 }
 
 pairTesterWhlFunc(testStr);
-pairTesterStrFunc(testStr);                                             // using split and slice methods
+// pairTesterStrFunc(testStr);                                             // using split and slice methods
 
 /*
 these should be run as seperate programs in dev tools to see which is faster. 
