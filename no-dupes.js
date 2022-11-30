@@ -1,0 +1,7 @@
+/*
+A simple Javascript function
+that searches for duplicate 
+integers in an array and 
+removes duplicates.
+
+*/
