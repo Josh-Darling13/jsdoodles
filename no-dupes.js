@@ -28,19 +28,44 @@ while(n < arrayThisLong){
     n++;
 }
 
-console.log(testArray);
+// console.log(testArray);
+
+const keyValues = Math.round(testArray.length/2);                       // halves the amount of potential random searching
+const keyLost = Math.floor(Math.random() * keyValues) + 3;              // randomly picks times elements will be duplicated.
+// console.log(keyLost);
+let stolenElements = [];
+
+let k = 0;
+
+while (k < keyLost){
+    let keyFound = Math.floor(Math.random() * testArray.length);
+    stolenElements[k] = testArray[keyFound];
+    k++;
+}
+
+console.log(`stolen elements: ${stolenElements} \n `);
+
+
+let i = 0;
+
+while (i < stolenElements.length){
+    let keyFound = Math.floor(Math.random() * testArray.length);
+    testArray.splice(keyFound, 0, stolenElements[i]);
+    i++;
+}
+
+console.log(`stolen elements in test array: ${testArray} \n `);
 
 
 
 
 
-
-
-let orgArray = [
-    150, 523, 897, 918, 974, 628, 759, 709,
-     64, 829, 775, 262, 880, 168, 784, 974,
-    903, 669, 741,  15, 713, 138, 625, 964,
-    620, 785, 398, 926, 351, 292,  47, 472,
-    194, 525, 457, 469, 918, 116,  28, 537,
-    893, 609, 827
-  ];
+// Static array for building on later
+// let orgArray = [
+//     150, 523, 897, 918, 974, 628, 759, 709,
+//      64, 829, 775, 262, 880, 168, 784, 974,
+//     903, 669, 741,  15, 713, 138, 625, 964,
+//     620, 785, 398, 926, 351, 292,  47, 472,
+//     194, 525, 457, 469, 918, 116,  28, 537,
+//     893, 609, 827
+//   ];
