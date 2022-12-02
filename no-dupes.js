@@ -69,6 +69,7 @@ let orgArray = [
 
 const copyArray = [...orgArray];
 let searchForMe = [];
+
 let gotBackHere = [];
 let makeKey = 0;
 
@@ -82,10 +83,16 @@ for (let element in orgArray){
     // `);
     // searchForMe[makeKey] = searchFor;
     if (whereInArray !== -1){
+        let pairedInfo = [];
         searchForMe.push(searchFor);
+
         gotBackHere.push([whereInArray,searchFor]);
+        makeKey++;
     }
 
+    for (i in gotBackHere){
+        console.log(i)
+    }
 
     // console.log("Element " + copyArray[whereInArray]);
 
@@ -94,16 +101,24 @@ for (let element in orgArray){
     //     orgArray.splice(whereInArray,1);
     //     console.log("made it here");
     // }
-    makeKey++;
+    
 }
-console.log(`these numbers have duplicates 
-${searchForMe}
 
-the number and it's first location
-${gotBackHere}
-`);
+// const foo = [1,2,3];
+
+// console.log(searchForMe);
+// console.log(gotBackHere);
 
 // 918 974
 // console.log(orgArray);
 // console.log(orgArray[10]);
 // console.log(orgArray[32]);
+
+// `
+// the number and it's first location
+// ${gotBackHere}
+
+// How's that foo look
+// ${foo}
+
+// `
