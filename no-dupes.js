@@ -57,33 +57,53 @@ fun to when writing the program.
 // console.log(`stolen elements in test array: ${testArray} \n `);
 
 
-
-
-
 // Static array for building on later
 let orgArray = [
-    150, 666, 523, 897, 918, 974, 628, 759, 
+    150, 666, 523, 666, 897, 918, 974, 628,  
      64, 829, 775, 262, 880, 168, 784, 974,
     903, 669, 741,  15, 713, 138, 625, 964,
     620, 785, 398, 926, 351, 292,  47, 472,
     194, 525, 457, 469, 918, 116,  28, 537,
-    893, 609, 827, 666, 709
+    893, 609, 827, 709, 759, 523
   ];
 
 const copyArray = [...orgArray];
+let searchForMe = [];
+let gotBackHere = [];
+let makeKey = 0;
 
 for (let element in orgArray){
     // console.log(orgArray[element]);
     let searchFor = copyArray.shift();
-    console.log(searchFor);
-    let whereInArray = orgArray.indexOf(searchFor);
-    console.log(whereInArray);
+    // console.log("searchFor " + searchFor + "the dp");
+    let whereInArray = copyArray.indexOf(searchFor);
+    // console.log(`duplicate search for ${searchFor} its index is ${whereInArray} 
+    // see it's right here ${orgArray[whereInArray]}
+    // `);
+    // searchForMe[makeKey] = searchFor;
     if (whereInArray !== -1){
-        orgArray.splice(whereInArray,1);
-        console.log("made it here");
+        searchForMe.push(searchFor);
+        gotBackHere.push([whereInArray,searchFor]);
     }
+
+
+    // console.log("Element " + copyArray[whereInArray]);
+
+    // if (whereInArray > 0){
+    //     console.log("2nd where in array" + whereInArray);
+    //     orgArray.splice(whereInArray,1);
+    //     console.log("made it here");
+    // }
+    makeKey++;
 }
+console.log(`these numbers have duplicates 
+${searchForMe}
+
+the number and it's first location
+${gotBackHere}
+`);
+
 // 918 974
-console.log(orgArray);
-console.log(orgArray[10]);
-console.log(orgArray[32]);
+// console.log(orgArray);
+// console.log(orgArray[10]);
+// console.log(orgArray[32]);
