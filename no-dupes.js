@@ -70,51 +70,28 @@ let orgArray = [
 
 const copyArray = [...orgArray];
 let searchForMe = [];
-
 let gotBackHere = [];
-// let makeKey = 0;
+let copyRemoved = [];
+const prepArray = orgArray.reverse();
+let revArray = [...prepArray];
+console.log(revArray);
 
 for (let element in orgArray){
-    // console.log(orgArray[element]);
     let searchFor = copyArray.shift();
-    // console.log("searchFor " + searchFor + "the dp");
     let whereInArray = copyArray.indexOf(searchFor);
-    // console.log(`duplicate search for ${searchFor} its index is ${whereInArray} 
-    // see it's right here ${orgArray[whereInArray]}
-    // `);
-    // searchForMe[makeKey] = searchFor;
+
     if (whereInArray !== -1){
         searchForMe.push(searchFor);
-        gotBackHere.push([whereInArray,searchFor]);
+        // gotBackHere.push([whereInArray,searchFor]);
     }
-
-
-
-    // console.log("Element " + copyArray[whereInArray]);
-
-    // if (whereInArray > 0){
-    //     console.log("2nd where in array" + whereInArray);
-    //     orgArray.splice(whereInArray,1);
-    //     console.log("made it here");
-    // }
-    
 }
 
+for (elm in searchForMe){
+    let whereDelete = revArray.indexOf(searchForMe[elm]);
+    console.log("whereDelete" + whereDelete);
+    revArray.splice(whereDelete,1);
+}
 
+console.log("The Array with all duplicates removed:");
+console.log(revArray)
 
-console.log(searchForMe);
-// console.log(gotBackHere);
-
-// 918 974
-// console.log(orgArray);
-// console.log(orgArray[10]);
-// console.log(orgArray[32]);
-
-// `
-// the number and it's first location
-// ${gotBackHere}
-
-// How's that foo look
-// ${foo}
-
-// `
