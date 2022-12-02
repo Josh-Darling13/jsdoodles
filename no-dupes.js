@@ -1,6 +1,7 @@
 /*
 A simple Javascript function that searches for duplicate 
-integers in an array and removes duplicates.
+integers in an array and removes duplicates. It doesn't matter
+if the order of the array is changed.
 
 I find this idea to be kind of ... boring.
 
@@ -71,7 +72,7 @@ const copyArray = [...orgArray];
 let searchForMe = [];
 
 let gotBackHere = [];
-let makeKey = 0;
+// let makeKey = 0;
 
 for (let element in orgArray){
     // console.log(orgArray[element]);
@@ -83,16 +84,11 @@ for (let element in orgArray){
     // `);
     // searchForMe[makeKey] = searchFor;
     if (whereInArray !== -1){
-        let pairedInfo = [];
         searchForMe.push(searchFor);
-
         gotBackHere.push([whereInArray,searchFor]);
-        makeKey++;
     }
 
-    for (i in gotBackHere){
-        console.log(i)
-    }
+
 
     // console.log("Element " + copyArray[whereInArray]);
 
@@ -104,9 +100,9 @@ for (let element in orgArray){
     
 }
 
-// const foo = [1,2,3];
 
-// console.log(searchForMe);
+
+console.log(searchForMe);
 // console.log(gotBackHere);
 
 // 918 974
